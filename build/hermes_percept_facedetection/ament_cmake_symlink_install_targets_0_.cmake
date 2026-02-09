@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/nkle2/HERMES/HERMES-percept/build/hermes_percept_facedetection/facedetect" "/home/nkle2/HERMES/HERMES-percept/build/hermes_percept_facedetection/facedetect_node" "TARGETS" "facedetect" "facedetect_node" "DESTINATION" "lib/hermes_percept_facedetection")

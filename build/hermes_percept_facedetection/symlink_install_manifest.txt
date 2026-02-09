@@ -1,0 +1,17 @@
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/lib/hermes_percept_facedetection/facedetect
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/lib/hermes_percept_facedetection/facedetect_node
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/ament_index/resource_index/package_run_dependencies/hermes_percept_facedetection
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/ament_index/resource_index/parent_prefix_path/hermes_percept_facedetection
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/environment/ament_prefix_path.sh
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/environment/ament_prefix_path.dsv
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/environment/path.sh
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/environment/path.dsv
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/local_setup.bash
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/local_setup.sh
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/local_setup.zsh
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/local_setup.dsv
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/package.dsv
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/ament_index/resource_index/packages/hermes_percept_facedetection
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/cmake/hermes_percept_facedetectionConfig.cmake
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/cmake/hermes_percept_facedetectionConfig-version.cmake
+/home/nkle2/HERMES/HERMES-percept/install/hermes_percept_facedetection/share/hermes_percept_facedetection/package.xml

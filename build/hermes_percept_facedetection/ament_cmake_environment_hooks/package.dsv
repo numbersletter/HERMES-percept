@@ -1,0 +1,4 @@
+source;share/hermes_percept_facedetection/local_setup.bash
+source;share/hermes_percept_facedetection/local_setup.dsv
+source;share/hermes_percept_facedetection/local_setup.sh
+source;share/hermes_percept_facedetection/local_setup.zsh

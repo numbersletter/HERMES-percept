@@ -1,0 +1,8 @@
+source;share/hermes_percept_facedetection/hook/cmake_prefix_path.ps1
+source;share/hermes_percept_facedetection/hook/cmake_prefix_path.dsv
+source;share/hermes_percept_facedetection/hook/cmake_prefix_path.sh
+source;share/hermes_percept_facedetection/local_setup.bash
+source;share/hermes_percept_facedetection/local_setup.dsv
+source;share/hermes_percept_facedetection/local_setup.ps1
+source;share/hermes_percept_facedetection/local_setup.sh
+source;share/hermes_percept_facedetection/local_setup.zsh

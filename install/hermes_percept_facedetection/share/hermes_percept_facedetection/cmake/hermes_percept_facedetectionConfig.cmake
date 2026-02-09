@@ -1,0 +1,1 @@
+/home/nkle2/HERMES/HERMES-percept/build/hermes_percept_facedetection/ament_cmake_core/hermes_percept_facedetectionConfig.cmake

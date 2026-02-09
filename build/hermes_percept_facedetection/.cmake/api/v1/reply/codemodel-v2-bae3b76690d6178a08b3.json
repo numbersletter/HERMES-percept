@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-8f26450b42767c60b6a8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "hermes_percept_facedetection",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "facedetect::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-facedetect-e1154cb57b327b8234c5.json",
+					"name" : "facedetect",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "facedetect_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-facedetect_node-f12d3fcbd95d13fdb826.json",
+					"name" : "facedetect_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hermes_percept_facedetection_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hermes_percept_facedetection_uninstall-3364cf785cb7a4f72144.json",
+					"name" : "hermes_percept_facedetection_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-3e9047c9f97db69c875e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/nkle2/HERMES/HERMES-percept/build/hermes_percept_facedetection",
+		"source" : "/home/nkle2/HERMES/HERMES-percept/src/hermes_percept_facedetection"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
