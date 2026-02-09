@@ -5,7 +5,7 @@
 
 // memory buffer for detection results (bytes)
 #define DETECT_BUFFER_SIZE 0x20000
-// test
+
 int main() {
     // gstreamer pipeline from the python prototype
     std::string pipeline = 
