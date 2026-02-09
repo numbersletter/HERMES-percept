@@ -1,0 +1,3 @@
+/home/nkle2/camera_ws/build/CMakeFiles/facedetect.dir
+/home/nkle2/camera_ws/build/CMakeFiles/edit_cache.dir
+/home/nkle2/camera_ws/build/CMakeFiles/rebuild_cache.dir
