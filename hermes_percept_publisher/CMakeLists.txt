@@ -51,10 +51,25 @@ ament_target_dependencies(image_publisher_node
 )
 target_link_libraries(image_publisher_node image_publisher_component ${OpenCV_LIBS})
 
+# --- Test viewer executable ---
+add_executable(test_viewer test/test_viewer.cpp)
+target_include_directories(test_viewer PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    ${OpenCV_INCLUDE_DIRS}
+)
+ament_target_dependencies(test_viewer
+    rclcpp
+    image_transport
+    sensor_msgs
+    cv_bridge
+)
+target_link_libraries(test_viewer ${OpenCV_LIBS})
+
 # Install
 install(TARGETS
     image_publisher_component
     image_publisher_node
+    test_viewer
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION lib/${PROJECT_NAME}

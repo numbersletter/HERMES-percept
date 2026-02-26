@@ -73,8 +73,10 @@ void ImagePublisherComponent::init()
         std::size_t pos = 0;
         int index = std::stoi(source_, &pos);
         if (pos == source_.size() && index >= 0) {
-            cap_.open(index);
+            cap_.open(index, cv::CAP_V4L2);
             if (cap_.isOpened()) {
+                cap_.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+                cap_.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
                 RCLCPP_INFO(get_logger(), "Opened camera index %d.", index);
                 is_video_ = false;
                 compute_flip_params();
