@@ -13,6 +13,7 @@ find_package(image_transport REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(image_geometry REQUIRED)
 
 option(ENABLE_NEON "Enable NEON SIMD optimizations (ARM only)" OFF)
 
@@ -49,6 +50,7 @@ ament_target_dependencies(image_detection_component
     sensor_msgs
     cv_bridge
     std_msgs
+    image_geometry
 )
 target_link_libraries(image_detection_component
     ${OpenCV_LIBS}
@@ -69,6 +71,7 @@ ament_target_dependencies(image_detection_node
     sensor_msgs
     cv_bridge
     std_msgs
+    image_geometry
 )
 target_link_libraries(image_detection_node image_detection_component ${OpenCV_LIBS})
 

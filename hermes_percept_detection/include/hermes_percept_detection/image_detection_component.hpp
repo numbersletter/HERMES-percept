@@ -8,6 +8,7 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "cv_bridge/cv_bridge.hpp"
 #include "image_transport/image_transport.hpp"
+#include <geometry_msgs/msg/point_stamped.hpp>
 #include "std_msgs/msg/header.hpp"
 
 namespace hermes_percept {
@@ -25,6 +26,9 @@ private:
     image_transport::Publisher publisher_;
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
     rclcpp::Time last_publish_time_;
+
+    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr bbox_publisher_;
+
 };
 
 }  // namespace hermes_percept

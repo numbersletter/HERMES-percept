@@ -16,6 +16,8 @@
   <depend>cv_bridge</depend>
   <depend>std_msgs</depend>
   <depend>opencv</depend>
+  <depend>image_geometry</depend>
+
 
   <export>
     <build_type>ament_cmake</build_type>
