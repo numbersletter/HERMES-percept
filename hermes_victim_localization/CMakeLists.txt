@@ -10,17 +10,31 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(image_geometry REQUIRED)
+find_package(image_transport REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
-add_executable(victim_localization_node src/victim_localization_node.cpp)
+add_executable(victim_localization_node src/victim_localization_node.cpp src/victim_localizer_component.cpp)
 target_include_directories(victim_localization_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
 target_compile_features(victim_localization_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+ament_target_dependencies(victim_localization_node
+  rclcpp
+  rclcpp_components
+  sensor_msgs
+  geometry_msgs
+  tf2_ros
+  tf2_geometry_msgs
+  image_geometry
+  image_transport
+)
 
 install(TARGETS victim_localization_node
   DESTINATION lib/${PROJECT_NAME})

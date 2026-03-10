@@ -4,6 +4,7 @@
 
 
 namespace hermes_percept {
+VictimLocalizer::~VictimLocalizer() = default;
 
 VictimLocalizer::VictimLocalizer(const rclcpp::NodeOptions & options)
 : Node("victim_localization", options),
@@ -32,9 +33,10 @@ tf_listener_(tf_buffer_)
         "/victim_point", 10);
 }
 
-    double distance_between_victims(const geometry_msgs::msg::Point & p1, const geometry_msgs::msg::Point & p2){
-        return std::sqrt(std::pow(p1.x - p2.x, 2) + std::pow(p1.y - p2.y, 2));
-    }
+
+double VictimLocalizer::distance_between_victims(const geometry_msgs::msg::Point & p1, const geometry_msgs::msg::Point & p2){
+    return std::sqrt(std::pow(p1.x - p2.x, 2) + std::pow(p1.y - p2.y, 2));
+}
 
 
 void VictimLocalizer::on_victim_detect(const geometry_msgs::msg::Point::SharedPtr bbox_center){

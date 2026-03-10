@@ -4,6 +4,7 @@
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/laser_scan.hpp>
 #include <tf2_ros/transform_listener.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2_ros/buffer.h>
 #include "image_transport/image_transport.hpp"
 #include <vector>
@@ -32,7 +33,7 @@ namespace hermes_percept {
         rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr bbox_sub_;
         rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr pose_publisher_;
 
-        double distance_between_victims(const geometry_msgs::msg::Point & p1, const geometry_msgs::msg::Point & p2);
+        static double distance_between_victims(const geometry_msgs::msg::Point & p1, const geometry_msgs::msg::Point & p2);
 
         void on_victim_detect(const geometry_msgs::msg::Point::SharedPtr bbox_center);
 
