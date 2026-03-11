@@ -16,7 +16,7 @@ ImageDetectionComponent::ImageDetectionComponent(const rclcpp::NodeOptions & opt
     // image_transport publisher: advertises face_img (raw + compressed)
     publisher_ = image_transport::create_publisher(this, "face_img");
 
-    bbox_publisher_ = this->create_publisher<geometry_msgs::msg::Point>(
+    bbox_publisher_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
         "/bbox_center", 10);
 
     subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
@@ -66,10 +66,13 @@ void ImageDetectionComponent::on_image(const sensor_msgs::msg::Image::SharedPtr 
             cv::rectangle(frame, cv::Rect(x, y, w, h), cv::Scalar(0, 0, 255), 3);
 
             //get center of bounding box for victim pose
-            auto bbox_center = geometry_msgs::msg::Point();
-            bbox_center.x = x + (w / 2.0); // center x
-            bbox_center.y = y + (h / 2.0); // center y
-            bbox_center.z = 0.0;
+            auto bbox_center = geometry_msgs::msg::PointStamped();
+            bbox_center.header.stamp = msg->header.stamp;
+            bbox_center.header.frame_id = "camera";
+
+            bbox_center.point.x = x + (w / 2.0); //center x
+            bbox_center.point.y = y + (h / 2.0); //center y
+            bbox_center.point.z = 0.0;
 
             bbox_publisher_->publish(bbox_center);
 

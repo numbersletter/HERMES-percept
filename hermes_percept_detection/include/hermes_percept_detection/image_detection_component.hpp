@@ -9,6 +9,7 @@
 #include "cv_bridge/cv_bridge.hpp"
 #include "image_transport/image_transport.hpp"
 #include <geometry_msgs/msg/point_stamped.hpp>
+#include <geometry_msgs/msg/point.hpp>
 #include "std_msgs/msg/header.hpp"
 
 namespace hermes_percept {
@@ -27,7 +28,7 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
     rclcpp::Time last_publish_time_;
 
-    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr bbox_publisher_;
+    rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr bbox_publisher_;
 
 };
 
