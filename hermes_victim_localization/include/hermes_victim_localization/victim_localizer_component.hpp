@@ -25,7 +25,7 @@ namespace hermes_percept {
         geometry_msgs::msg::PointStamped victim_point;
 
         std::vector<geometry_msgs::msg::Point> found_victims_;
-        const double PROXIMITY_THRESHOLD = 0.0635;
+        const double PROXIMITY_THRESHOLD = 0.02;
 
         rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
         sensor_msgs::msg::LaserScan::SharedPtr recent_scan_;

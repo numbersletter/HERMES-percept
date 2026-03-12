@@ -59,7 +59,7 @@ void VictimLocalizer::on_victim_detect(const geometry_msgs::msg::PointStamped::S
 
     float lidar_distance = recent_scan_->ranges[scan_index]; //get distance away from lidar using proper scan range
     if(lidar_distance < recent_scan_->range_min || lidar_distance >= recent_scan_->range_max) return; //check if valid distance value
-    RCLCPP_INFO(this->get_logger(), "LiDAR Distance Measurement: ", lidar_distance);
+    RCLCPP_INFO(this->get_logger(), "LiDAR Distance Measurement: %.2f", lidar_distance);
     RCLCPP_INFO(this->get_logger(), "Calculating Coordinates...");
 
     //get correct timestamp and frame id
@@ -67,16 +67,15 @@ void VictimLocalizer::on_victim_detect(const geometry_msgs::msg::PointStamped::S
     cam_point.header.frame_id = bbox_center->header.frame_id;
 
     //convert angle to coordinates using camera pose
-    cam_point.point.x = lidar_distance * sin(bearing_angle);
-    cam_point.point.z = lidar_distance * cos(bearing_angle);
-    cam_point.point.y = 0; 
-
+    cam_point.point.x = lidar_distance * cos(bearing_angle);
+    cam_point.point.y = lidar_distance * sin(-bearing_angle);
+    cam_point.point.z = 0; 
     
     //use tf to transform to map frame
     RCLCPP_INFO(this->get_logger(), "Transforming to Map Frame...");
     try{
         
-        auto victim_point = tf_buffer_.transform(cam_point, "map", tf2::durationFromSec(0.07));
+        auto victim_point = tf_buffer_.transform(cam_point, "map", tf2::durationFromSec(0.1));
         auto current_point = victim_point.point;
 
         bool repeat = false;
@@ -89,8 +88,8 @@ void VictimLocalizer::on_victim_detect(const geometry_msgs::msg::PointStamped::S
         }
 
         if(!repeat){ //if not a repeat victim, publish location and add to seen victims
-            RCLCPP_INFO(this->get_logger(),"New victim at: x%.2f East, y%.2f North relative to Origin", current_point.x, current_point.y);
-
+            RCLCPP_INFO(this->get_logger(),"New victim at: x%.2f North, y%.2f East relative to Origin", current_point.x, current_point.y);
+            RCLCPP_INFO(this->get_logger(), "DEBUG: Angle: %.2f rad | Index: %d | Dist: %.2f m", bearing_angle, scan_index, lidar_distance);
             found_victims_.push_back(current_point);
             pose_publisher_->publish(victim_point); //publish for map 
             RCLCPP_INFO(this->get_logger(), "Victim Point Published.");
